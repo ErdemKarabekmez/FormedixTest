@@ -4,6 +4,7 @@ package com.formedix.stepDefinitions;
 import com.formedix.pages.RepositoryStudiesPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 import java.util.List;
 
@@ -21,26 +22,26 @@ RepositoryStudiesPage repositoryStudiesPage = new RepositoryStudiesPage();
     @When("User should see following options")
     public void user_should_see_following_options(List<String> techStudyOptions) {
 
-
+        Assert.assertEquals(techStudyOptions,repositoryStudiesPage.getTechStudyOptions());
 
     }
 
     @When("User click on the View")
     public void user_click_on_the_View() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        repositoryStudiesPage.View.click();
+
     }
 
     @When("User click on the Data acquisition")
     public void user_click_on_the_Data_acquisition() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        repositoryStudiesPage.dataAcquisition.click();
     }
 
     @When("User click on the Forms")
     public void user_click_on_the_Forms() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        repositoryStudiesPage.Forms.click();
     }
 
 

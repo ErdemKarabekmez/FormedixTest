@@ -20,6 +20,15 @@ public class RepositoryStudiesPage extends BasePage {
     @FindBy(id = "fdxMdbContainerListItem0MenuToggle")
     public WebElement techStudyMenu;
 
+    @FindBy (id = "fdxMdbContainerListItem0View")
+    public WebElement View;
+
+    @FindBy (id = "dataAcquisitionName")
+    public WebElement dataAcquisition;
+
+    @FindBy (id = "FORMTypeName")
+    public WebElement Forms;
+
 
     public void mouseAction() {
         Actions actions = new Actions(Driver.get());
@@ -28,10 +37,15 @@ public class RepositoryStudiesPage extends BasePage {
         studiesMenu.click();
     }
 
-    public void getTechStudyOptions() {
+    public List<String> getTechStudyOptions() {
         techStudyMenu.click();
         List<WebElement> list = Driver.get().findElements(By.xpath("//li[starts-with(@id,'fdxMdbContainerListItem')]"));
+        List<String> options = new ArrayList<>();
 
+        for (WebElement el : list) {
+            options.add(el.getText());
+        }
+        return options;
 
     }
 }
