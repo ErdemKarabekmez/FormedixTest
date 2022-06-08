@@ -9,7 +9,13 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositoryStudiesPage extends BasePage {
+public class DashboardPage extends BasePage {
+
+    @FindBy(css = ".fdx-main-nav-item-label")
+    public List<WebElement> menuItems;
+
+    @FindBy(css = ".fdx-sub-nav-menu-item-label")
+    public List<WebElement> subMenuItems;
 
     @FindBy(id = "menuMdb")
     public WebElement repositoryMenu;
@@ -30,6 +36,8 @@ public class RepositoryStudiesPage extends BasePage {
     public WebElement Forms;
 
 
+
+
     public void mouseAction() {
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(repositoryMenu).perform();
@@ -37,15 +45,27 @@ public class RepositoryStudiesPage extends BasePage {
         studiesMenu.click();
     }
 
-    public List<String> getTechStudyOptions() {
+    public List<String> getTechStudyOptions() throws InterruptedException {
+
         techStudyMenu.click();
+        Thread.sleep(2000);
         List<WebElement> list = Driver.get().findElements(By.xpath("//li[starts-with(@id,'fdxMdbContainerListItem')]"));
         List<String> options = new ArrayList<>();
 
         for (WebElement el : list) {
             options.add(el.getText());
         }
+
         return options;
 
     }
+
+    public void navigateTo(String menuOption, String subMenuOption) {
+        Actions actions = new Actions(Driver.get());
+
+        menuItems.stream().forEach(p->{if(p.getText().equals(menuOption)){actions.moveToElement(p);}});
+        subMenuItems.stream().forEach(p->{if(p.getText().equals(subMenuOption)){p.click();}});
+    }
+
+
 }
