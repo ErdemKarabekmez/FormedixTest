@@ -1,0 +1,246 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 7743239600,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is on the sign in page",
+            "match": {
+              "location": "com.formedix.stepDefinitions.LoginStepDefinitions.userIsOnTheSignInPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 296263900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User type valid username and password and click the sign in button",
+            "match": {
+              "location": "com.formedix.stepDefinitions.LoginStepDefinitions.userTypeValidUsernameAndPasswordAndClickTheSignInButton()"
+            },
+            "keyword": "When "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-06-09T13:06:05.496Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3053559100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.formedix.stepDefinitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Navigate to Repository-\u003eStudies and perform the following actions and logout of the application",
+        "description": "",
+        "id": "login-to-the-application-with-credentials-and-perform-some-actions-and-logout-of-the-application;navigate-to-repository-\u003estudies-and-perform-the-following-actions-and-logout-of-the-application",
+        "after": [
+          {
+            "result": {
+              "duration": 698952300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.formedix.stepDefinitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3509611100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User navigate to \"Repository\" \"Studies\" menu",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Repository\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"Studies\"",
+                  "offset": 30
+                }
+              ],
+              "location": "com.formedix.stepDefinitions.DashboardPageStepDefinitions.userNavigateToMenu(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1423718200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User should see following options",
+            "match": {
+              "location": "com.formedix.stepDefinitions.StudiesStepDefinitions.user_should_see_following_options(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "View"
+                ]
+              },
+              {
+                "cells": [
+                  "Edit"
+                ]
+              },
+              {
+                "cells": [
+                  "Remove this study"
+                ]
+              },
+              {
+                "cells": [
+                  "Transition this study"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 70041000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User click on the View",
+            "match": {
+              "location": "com.formedix.stepDefinitions.StudiesStepDefinitions.user_click_on_the_View()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1587871800,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User click on the Data acquisition",
+            "match": {
+              "location": "com.formedix.stepDefinitions.StudiesStepDefinitions.user_click_on_the_Data_acquisition()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 755138400,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User click on the Forms",
+            "match": {
+              "location": "com.formedix.stepDefinitions.StudiesStepDefinitions.user_click_on_the_Forms()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1100585600,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User select the medical history form",
+            "match": {
+              "location": "com.formedix.stepDefinitions.FormStepDefinitions.user_select_the_medical_history_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2329523900,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User click on the Edit Form",
+            "match": {
+              "location": "com.formedix.stepDefinitions.FormStepDefinitions.user_click_on_the_Edit_Form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1064978400,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User add a description and save the change",
+            "match": {
+              "location": "com.formedix.stepDefinitions.FormStepDefinitions.user_add_a_description_and_save_the_change()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 132086900,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "verify updates has been preserved on the property panel and on the main form view",
+            "match": {
+              "location": "com.formedix.stepDefinitions.FormStepDefinitions.verify_updates_has_been_preserved_on_the_property_panel_and_on_the_main_form_view()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 485487400,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User navigate to \"testteamtechtest\" \"Sign out\" menu",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"testteamtechtest\"",
+                  "offset": 17
+                },
+                {
+                  "val": "\"Sign out\"",
+                  "offset": 36
+                }
+              ],
+              "location": "com.formedix.stepDefinitions.DashboardPageStepDefinitions.userNavigateToMenu(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "Login to the application with credentials and perform some actions and logout of the application",
+    "description": "",
+    "id": "login-to-the-application-with-credentials-and-perform-some-actions-and-logout-of-the-application",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/formedix.feature",
+    "tags": []
+  }
+]

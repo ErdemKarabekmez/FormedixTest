@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
+    /**
+     * Locators
+     */
 
     @FindBy(id = "username")
     public WebElement userNameInputBox;
@@ -17,6 +20,14 @@ public class LoginPage extends BasePage {
     public WebElement signInBtn;
 
 
+    /**
+     * Methods
+     */
+
+    /**
+     * This method is login to the  application
+     */
+
     public void login() {
 
         String userName = ConfigurationReader.get("userName");
@@ -25,8 +36,6 @@ public class LoginPage extends BasePage {
         userNameInputBox.sendKeys(userName);
         passWordInputBox.sendKeys(passWord);
         signInBtn.click();
-
-
     }
 
 }

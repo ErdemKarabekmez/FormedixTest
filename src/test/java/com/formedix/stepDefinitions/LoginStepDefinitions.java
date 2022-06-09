@@ -13,9 +13,7 @@ public class LoginStepDefinitions {
     @Given("User is on the sign in page")
     public void userIsOnTheSignInPage() {
 
-
         Driver.get().get(ConfigurationReader.get("url"));
-
     }
 
     @When("User type valid username and password and click the sign in button")
