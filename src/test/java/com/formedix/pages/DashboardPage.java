@@ -1,10 +1,12 @@
 package com.formedix.pages;
 
+import com.formedix.utilities.BrowserUtils;
 import com.formedix.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DashboardPage extends BasePage {
 
@@ -20,6 +22,9 @@ public class DashboardPage extends BasePage {
     @FindBy (id = "fdxMdbContainerListItem0View")
     public WebElement View;
 
+    @FindBy(css = "#fdxMdbContainerListItem0Menu>li")
+    public List<WebElement> viewList;
+
     @FindBy (id = "dataAcquisitionName")
     public WebElement dataAcquisition;
 
@@ -27,16 +32,7 @@ public class DashboardPage extends BasePage {
     public WebElement Forms;
 
 
-
-
-    public void mouseAction() {
-        Actions actions = new Actions(Driver.get());
-        actions.moveToElement(repositoryMenu).perform();
-        actions.moveToElement(studiesMenu).perform();
-        studiesMenu.click();
-    }
-
-    public List<String> getTechStudyOptions() throws InterruptedException {
+    public List<String> getTechStudyOptions()  {
 
         techStudyMenu.click();
         BrowserUtils.waitForClickablility(View,5);
@@ -48,8 +44,8 @@ public class DashboardPage extends BasePage {
     public void navigateTo(String menuOption, String subMenuOption) {
         Actions actions = new Actions(Driver.get());
 
-        menuItems.stream().forEach(p->{if(p.getText().equals(menuOption)){actions.moveToElement(p);}});
-        subMenuItems.stream().forEach(p->{if(p.getText().equals(subMenuOption)){p.click();}});
+        menuItems.stream().forEach(item->{if(item.getText().equals(menuOption)){actions.moveToElement(item).perform();}});
+        subMenuItems.stream().forEach(subItem->{if(subItem.getText().equals(subMenuOption)){subItem.click();}});
     }
 
 
