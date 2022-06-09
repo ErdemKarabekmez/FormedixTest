@@ -1,14 +1,13 @@
 package com.formedix.stepDefinitions;
 
 
-import com.formedix.utilities.ConfigurationReader;
+
 import com.formedix.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {

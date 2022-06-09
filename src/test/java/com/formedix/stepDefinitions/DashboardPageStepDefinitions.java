@@ -2,32 +2,28 @@ package com.formedix.stepDefinitions;
 
 
 import com.formedix.pages.DashboardPage;
-import com.formedix.utilities.Driver;
+import com.formedix.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
 import java.util.List;
 
 public class DashboardPageStepDefinitions {
 
-DashboardPage dashboardPage = new DashboardPage();
+    DashboardPage dashboardPage = new DashboardPage();
 
     @Given("User navigate to {string} {string} menu")
     public void userNavigateToMenu(String menuOption, String subMenuOption) {
+
+        BrowserUtils.waitForPageToLoad(15);
         dashboardPage.navigateTo(menuOption,subMenuOption);
     }
 
-    @Then("Verify the dashboard page")
-    public void verifyTheDashboardPage() {
-      Assert.assertTrue(Driver.get().getTitle().equals("Home - ryze"));
-    }
 
     @When("User should see following options")
-    public void user_should_see_following_options(List<String> techStudyOptions) throws InterruptedException {
+    public void user_should_see_following_options(List<String> techStudyOptions) {
 
-        Assert.assertEquals(techStudyOptions,dashboardPage.getTechStudyOptions());
+        Assert.assertEquals(techStudyOptions, dashboardPage.getTechStudyOptions());
 
 
     }
@@ -35,12 +31,14 @@ DashboardPage dashboardPage = new DashboardPage();
     @When("User click on the View")
     public void user_click_on_the_View() {
 
+
         dashboardPage.View.click();
 
     }
 
     @When("User click on the Data acquisition")
     public void user_click_on_the_Data_acquisition() {
+
         dashboardPage.dataAcquisition.click();
     }
 
@@ -49,7 +47,6 @@ DashboardPage dashboardPage = new DashboardPage();
 
         dashboardPage.Forms.click();
     }
-
 
 
 }

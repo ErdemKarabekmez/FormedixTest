@@ -1,12 +1,9 @@
 package com.formedix.pages;
 
 import com.formedix.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class DashboardPage extends BasePage {
@@ -16,12 +13,6 @@ public class DashboardPage extends BasePage {
 
     @FindBy(css = ".fdx-sub-nav-menu-item-label")
     public List<WebElement> subMenuItems;
-
-    @FindBy(id = "menuMdb")
-    public WebElement repositoryMenu;
-
-    @FindBy(id = "menuMdbStudies")
-    public WebElement studiesMenu;
 
     @FindBy(id = "fdxMdbContainerListItem0MenuToggle")
     public WebElement techStudyMenu;
@@ -48,16 +39,10 @@ public class DashboardPage extends BasePage {
     public List<String> getTechStudyOptions() throws InterruptedException {
 
         techStudyMenu.click();
-        Thread.sleep(2000);
-        List<WebElement> list = Driver.get().findElements(By.xpath("//li[starts-with(@id,'fdxMdbContainerListItem')]"));
-        List<String> options = new ArrayList<>();
-
-        for (WebElement el : list) {
-            options.add(el.getText());
-        }
+        BrowserUtils.waitForClickablility(View,5);
+        List<String> options = viewList.stream().map(p->p.getText()).collect(Collectors.toList());
 
         return options;
-
     }
 
     public void navigateTo(String menuOption, String subMenuOption) {

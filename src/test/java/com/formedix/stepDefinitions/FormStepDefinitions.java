@@ -2,7 +2,6 @@ package com.formedix.stepDefinitions;
 
 import com.formedix.pages.FormPage;
 import com.formedix.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,7 +23,8 @@ public class FormStepDefinitions {
     }
 
     @When("User click on the Edit Form")
-    public void user_click_on_the_Edit_Form() throws InterruptedException {
+    public void user_click_on_the_Edit_Form()  {
+
         JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
         jse.executeScript("arguments[0].click();", formPage.editFormButton);
 
@@ -50,11 +50,6 @@ public class FormStepDefinitions {
         Assert.assertEquals(description, formPage.propertyPanel.getText());
         Assert.assertEquals(description, formPage.mainFormView.getText());
 
-
-    }
-
-    @And("User logout of the application")
-    public void userLogoutOfTheApplication() {
 
     }
 }
