@@ -6,6 +6,8 @@
 * pom.xml file is created by Maven. It is possible to manage required dependencies easily via this file.
 * Under src/test/java/com/formedix folder, you can see the java codes here.
 * Test data is stored at configuration.properties file. It is possible to change browser type and url.
+* POM design is being used.
+* Singleton Driver pattern applied.
 
 # HOW TO EXECUTE TEST?
 
@@ -15,7 +17,6 @@ You should define proper tag on CukesRunner.class file to run tests automaticall
 * It is also possible to execute tests on feature files with clicking green play icon.
 * You can run test with maven (on the right side) and access fancy cucumber report in target folder(cucumber-html-reports).
 * Pre and post test commands are stored at Hooks.class.
-* Singleton Driver pattern applied.
 * It is possible to perform tests on different browsers via updating required field at configuration.properties file.
 
 
